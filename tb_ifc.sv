@@ -8,16 +8,26 @@ interface tb_ifc (input logic clk);
   // user-defined types are defined in instr_register_pkg.sv
   import instr_register_pkg::*;
 
-   
  logic          load_en;
  logic          reset_n;
  opcode_t       opcode;
  operand_t      operand_a, operand_b;
  address_t      write_pointer, read_pointer;
  instruction_t  instruction_word;
+  clocking cb @(posedge clk);
+  inout  load_en,
+  inout  reset_en,
+  inout  opcode,
+  inout  operand_a, operand_b,
+  inout   write_pointer, read_pointer,
+  inout  instruction_word,
+;
 
   // ADD CODE TO DECLARE THE INTERFACE SIGNALS
-
+  endclocking
+  modport TEST (clocking cb;
+  )
 
 endinterface: tb_ifc
+
 
