@@ -1,6 +1,7 @@
 class first_test;
-   int seed = 555;
+  // int seed = 555;
    virtual tb_ifc.TEST lab2_if;
+   parameter NR_OF_TRANZ= 100;
    function new(virtual tb_ifc.TEST lab_if);
    lab2_if =lab_if;
    endfunction
@@ -14,9 +15,9 @@ class first_test;
     // write_pointer values in a later lab
     //
     static int temp = 0;
-    lab2_if.cb.operand_a     <= $random(seed)%16;                 // between -15 and 15
-    lab2_if.cb.operand_b     <= $unsigned($random)%16;            // between 0 and 15
-    lab2_if.cb.opcode        <= opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
+    lab2_if.cb.operand_a     <= $urandom()%16;                 // between -15 and 15
+    lab2_if.cb.operand_b     <= $unsigned($urandom)%16;            // between 0 and 15
+    lab2_if.cb.opcode        <= opcode_t'($unsigned($urandom)%8);  // between 0 and 7, cast to opcode_t type
     lab2_if.cb.write_pointer <= temp++;
   endfunction: randomize_transaction
 
@@ -62,7 +63,7 @@ class first_test;
     // read back and display same three register locations
     $display("\nReading back the same register locations written...");
 
-     repeat (10) begin
+     repeat (NR_OF_TRANZ) begin
       int i;
        @(lab2_if.cb) lab2_if.cb.read_pointer <= $random(i)%16;
        @(negedge lab2_if.cb) print_results;
@@ -90,6 +91,7 @@ class first_test;
     $finish;
   //end
 endtask
+
 
 
  

@@ -1,0 +1,800 @@
+# 0
+# vsim +notimingchecks +nowarnTSCALE -sva -nocoverage -quiet -sv_seed 2367 -novopt top 
+# //  ModelSim SE 6.6d Nov  1 2010 
+# //
+# //  Copyright 1991-2010 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# ** Warning: (vsim-8441) ../lab01_testbench-interface/first_test.sv(26): Clocking block output lab2_if.cb.opcode is not legal in this
+# or another expression.
+#         Region: /instr_register_test_sv_unit
+# ** Warning: (vsim-8441) ../lab01_testbench-interface/first_test.sv(27): Clocking block output lab2_if.cb.operand_a is not legal in this
+# or another expression.
+#         Region: /instr_register_test_sv_unit
+# ** Warning: (vsim-8441) ../lab01_testbench-interface/first_test.sv(28): Clocking block output lab2_if.cb.operand_b is not legal in this
+# or another expression.
+#         Region: /instr_register_test_sv_unit
+# ** Warning: (vsim-8441) ../lab01_testbench-interface/first_test.sv(25): Clocking block output lab2_if.cb.write_pointer is not legal in this
+# or another expression.
+#         Region: /instr_register_test_sv_unit
+# ** Warning: (vsim-8441) ../lab01_testbench-interface/first_test.sv(32): Clocking block output lab2_if.cb.read_pointer is not legal in this
+# or another expression.
+#         Region: /instr_register_test_sv_unit
+# 
+# 
+# ***********************************************************
+# ***  THIS IS NOT A SELF-CHECKING TESTBENCH (YET).  YOU  ***
+# ***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***
+# ***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***
+# ***********************************************************
+#  First display
+# 
+# Reseting the instruction register...
+# 
+# Writing values to register stack...
+# Writing to register location 0: 
+#   lab2_if.cb.opcode = 2 (PASSB)
+#   lab2_if.cb.operand_a = 5
+#   lab2_if.cb.operand_b = 10
+# 
+# Writing to register location 1: 
+#   lab2_if.cb.opcode = 6 (DIV)
+#   lab2_if.cb.operand_a = 14
+#   lab2_if.cb.operand_b = 3
+# 
+# Writing to register location 2: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 15
+#   lab2_if.cb.operand_b = 15
+# 
+# Writing to register location 3: 
+#   lab2_if.cb.opcode = 0 (ZERO)
+#   lab2_if.cb.operand_a = 7
+#   lab2_if.cb.operand_b = 13
+# 
+# Writing to register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+# Writing to register location 5: 
+#   lab2_if.cb.opcode = 4 (SUB)
+#   lab2_if.cb.operand_a = 1
+#   lab2_if.cb.operand_b = 14
+# 
+# Writing to register location 6: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 0
+#   lab2_if.cb.operand_b = 11
+# 
+# Writing to register location 7: 
+#   lab2_if.cb.opcode = 5 (MULT)
+#   lab2_if.cb.operand_a = 8
+#   lab2_if.cb.operand_b = 3
+# 
+# Writing to register location 8: 
+#   lab2_if.cb.opcode = 5 (MULT)
+#   lab2_if.cb.operand_a = 3
+#   lab2_if.cb.operand_b = 10
+# 
+# Writing to register location 9: 
+#   lab2_if.cb.opcode = 3 (ADD)
+#   lab2_if.cb.operand_a = 14
+#   lab2_if.cb.operand_b = 8
+# 
+# 
+# Reading back the same register locations written...
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# Read from register location 4: 
+#   lab2_if.cb.opcode = 1 (PASSA)
+#   lab2_if.cb.operand_a = 6
+#   lab2_if.cb.operand_b = 11
+# 
+#   result    = 6
+# 
+# 
+# ***********************************************************
+# ***  THIS IS NOT A SELF-CHECKING TESTBENCH (YET).  YOU  ***
+# ***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***
+# ***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***
+# ***********************************************************
+# 
+# ** Note: $finish    : ../lab01_testbench-interface/first_test.sv(91)
+#    Time: 1120 ns  Iteration: 2  Instance: /top/test

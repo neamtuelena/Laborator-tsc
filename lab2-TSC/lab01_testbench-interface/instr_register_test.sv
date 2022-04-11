@@ -30,7 +30,8 @@ module instr_register_test(tb_ifc.TEST lab2_if);
  
     initial begin
       first_test fs;
-      fs=new(lab2_if);
+      fs=
+    new(lab2_if);
       //fs.lab2_if=lab2_if;
       fs.run();
     end
