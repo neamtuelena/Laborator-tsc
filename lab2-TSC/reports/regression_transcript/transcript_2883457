@@ -1,0 +1,53 @@
+# 1
+# Model Technology ModelSim SE vlog 6.6d Compiler 2010.11 Nov  1 2010
+# -- Compiling package instr_register_pkg
+# -- Compiling module instr_register
+# -- Importing package instr_register_pkg
+# -- Compiling package instr_register_test_sv_unit
+# -- Importing package instr_register_pkg
+# -- Compiling module instr_register_test
+# -- Compiling module top
+# -- Compiling interface tb_ifc
+# -- Compiling package tb_ifc_sv_unit
+# -- Importing package instr_register_pkg
+# -- Compiling interface tb_ifc
+# 
+# Top level modules:
+# 	top
+# vsim +notimingchecks +code=bcesft +nowarnTSCALE +NR_OF_TRANZ=12 -coverage -sva -quiet -sv_seed 2883457 -novopt top 
+# Refreshing C:\Users\panai\Desktop\lab2-TSC\sim\work.instr_register_pkg
+# Refreshing C:\Users\panai\Desktop\lab2-TSC\sim\work.top
+# Refreshing C:\Users\panai\Desktop\lab2-TSC\sim\work.tb_ifc_sv_unit
+# Refreshing C:\Users\panai\Desktop\lab2-TSC\sim\work.tb_ifc
+# Refreshing C:\Users\panai\Desktop\lab2-TSC\sim\work.instr_register_test_sv_unit
+# Refreshing C:\Users\panai\Desktop\lab2-TSC\sim\work.instr_register_test
+# Refreshing C:\Users\panai\Desktop\lab2-TSC\sim\work.instr_register
+# ** Error: Failure to checkout svverification license feature.
+# ** Error: Unable to checkout verification license - required for testbench features (randomize, randcase, randsequence, covergroup).
+# 
+#         Region: /instr_register_test_sv_unit
+# ** Warning: (vsim-8441) ../lab01_testbench-interface/first_test.sv(6): Clocking block output #parent#.lab2_if.cb.operand_a is not legal in this
+# or another expression.
+#         Region: /instr_register_test_sv_unit
+# ** Warning: (vsim-8441) ../lab01_testbench-interface/first_test.sv(6): Clocking block output #parent#.lab2_if.cb.operand_a is not legal in this
+# or another expression.
+#         Region: /instr_register_test_sv_unit
+# ** Warning: (vsim-8441) ../lab01_testbench-interface/first_test.sv(42): Clocking block output lab2_if.cb.opcode is not legal in this
+# or another expression.
+#         Region: /instr_register_test_sv_unit
+# ** Warning: (vsim-8441) ../lab01_testbench-interface/first_test.sv(43): Clocking block output lab2_if.cb.operand_a is not legal in this
+# or another expression.
+#         Region: /instr_register_test_sv_unit
+# ** Warning: (vsim-8441) ../lab01_testbench-interface/first_test.sv(44): Clocking block output lab2_if.cb.operand_b is not legal in this
+# or another expression.
+#         Region: /instr_register_test_sv_unit
+# ** Warning: (vsim-8441) ../lab01_testbench-interface/first_test.sv(41): Clocking block output lab2_if.cb.write_pointer is not legal in this
+# or another expression.
+#         Region: /instr_register_test_sv_unit
+# ** Warning: (vsim-8441) ../lab01_testbench-interface/first_test.sv(48): Clocking block output lab2_if.cb.read_pointer is not legal in this
+# or another expression.
+#         Region: /instr_register_test_sv_unit
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./run.do PAUSED at line 25

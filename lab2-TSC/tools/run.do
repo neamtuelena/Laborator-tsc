@@ -16,17 +16,17 @@ if {[file isdirectory work]} {
 # In [GUI_mode]: always compile sources / [regress_mode]: compile sources only once
 if {$compile_on || [batch_mode] == 0} {
   vlib work
-  vlog -sv -timescale "1ns/1ns" -work work       -f sources.txt
+  vlog -sv -timescale "1ns/1ns" -work work       -f sources.txt 
+  #vlog -sv -timescale "1ps/1ps" -cover bcesft -work work  -f sources.txt
 }
 
 # Load project
-  eval vsim -novopt -quiet -nocoverage +notimingchecks +nowarnTSCALE -sva -sv_seed $1 top
-# eval vsim -novopt -quiet -coverage -notogglevlogints +notimingchecks +nowarnTSCALE +TESTNAME=$1 -sva top
+  eval vsim -novopt -quiet -nocoverage +notimingchecks +nowarnTSCALE -sva -sv_seed $1 +NR_OF_TRANZ=$2 top
+  #eval vsim -novopt -quiet -coverage +code=bcesft +notimingchecks +nowarnTSCALE -sva -sv_seed $1 +NR_OF_TRANZ=$2  top
 
 # Run log/wave commands
 # Batch_mode = 0 [GUI_mode]; Batch_mode = 1 [regress_mode]
 if {[batch_mode] == 0} {
-  eval log -r /*
   eval do wave.do
 }
 

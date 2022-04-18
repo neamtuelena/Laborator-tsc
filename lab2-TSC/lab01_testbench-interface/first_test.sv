@@ -1,10 +1,43 @@
 class first_test;
   // int seed = 555;
-   virtual tb_ifc.TEST lab2_if;
-   parameter NR_OF_TRANZ= 100;
+   int error_cnt;
+  //parameter NR_OF_TRANZ;
+  covergroup my_funct_coverage;
+   coverpoint lab2_if.cb.operand_a{
+    
+     bins operand_a_zero ={0};
+     bins operand_a_Values_neg []={[-15:-1]};
+     bins operand_a_Values_pos[] ={[1:15]};
+   }
+  
+
+  
+   coverpoint lab2_if.cb.operand_b{
+    
+     bins operand_b_zero ={0};
+     bins operand_b_Values_pos []={[1:15]};
+   }
+  
+
+    
+   
+   coverpoint lab2_if.cb.opcode{
+    
+     bins opcode_zero ={0};
+     bins opcode_Values_pos []={[1:7]};
+   }
+   endgroup
+
+  // Interface declaration
+  virtual tb_ifc.TEST lab2_if;
+  int NR_OF_TRANZ;
+     // Global error counter
    function new(virtual tb_ifc.TEST lab_if);
    lab2_if =lab_if;
+   this.error_cnt = 0;
+   my_funct_coverage = new();
    endfunction
+
 
   function void randomize_transaction;
     // A later lab will replace this function with SystemVerilog
@@ -34,8 +67,57 @@ class first_test;
     $display("  lab2_if.cb.operand_a = %0d",   lab2_if.cb.instruction_word.op_a);
     $display("  lab2_if.cb.operand_b = %0d\n", lab2_if.cb.instruction_word.op_b);
     $display("  result    = %0d\n", lab2_if.cb.instruction_word.result);
+     case (lab2_if.cb.instruction_word.opc.name)
+      "PASSA" : begin
+        if (lab2_if.cb.instruction_word.result != lab2_if.cb.instruction_word.op_a) begin
+          $error("PASSA operation error: Expected result = %0d Actual result = %0d\n", lab2_if.cb.instruction_word.op_a, lab2_if.cb.instruction_word.result);
+          error_cnt += 1;
+        end
+      end
+      "PASSB" : begin
+        if (lab2_if.cb.instruction_word.result != lab2_if.cb.instruction_word.op_b) begin
+          $error("PASSB operation error: Expected result = %0d Actual result = %0d\n",lab2_if.cb.instruction_word.op_b, lab2_if.cb.instruction_word.result);
+          error_cnt += 1;
+        end
+      end
+      "ADD" : begin
+        if (lab2_if.cb.instruction_word.result != $signed(lab2_if.cb.instruction_word.op_a + lab2_if.cb.instruction_word.op_b)) begin
+          $error("ADD operation error: Expected result = %0d Actual result = %0d\n", $signed(lab2_if.cb.instruction_word.op_a + lab2_if.cb.instruction_word.op_b), lab2_if.cb.instruction_word.result);
+          error_cnt += 1;
+        end
+      end
+      "SUB" : begin
+        if (lab2_if.cb.instruction_word.result != $signed(lab2_if.cb.instruction_word.op_a - lab2_if.cb.instruction_word.op_b)) begin
+          $error("SUB operation error: Expected result = %0d Actual result = %0d\n", $signed(lab2_if.cb.instruction_word.op_a - lab2_if.cb.instruction_word.op_b), lab2_if.cb.instruction_word.result);
+          error_cnt += 1;
+        end
+      end
+      "MULT" : begin
+        if (lab2_if.cb.instruction_word.result != $signed(lab2_if.cb.instruction_word.op_a * lab2_if.cb.instruction_word.op_b)) begin
+          $error("MULT operation error: Expected result = %0d Actual result = %0d\n", $signed(lab2_if.cb.instruction_word.op_a * lab2_if.cb.instruction_word.op_b), lab2_if.cb.instruction_word.result);
+          error_cnt += 1;
+        end
+      end
+      "DIV" : begin
+        if (lab2_if.cb.instruction_word.result != $signed(lab2_if.cb.instruction_word.op_a / lab2_if.cb.instruction_word.op_b)) begin
+          $error("DIV operation error: Expected result = %0d Actual result = %0d\n", $signed(lab2_if.cb.instruction_word.op_a / lab2_if.cb.instruction_word.op_b), lab2_if.cb.instruction_word.result);
+          error_cnt += 1;
+        end
+      end
+      "MOD" : begin
+        if (lab2_if.cb.instruction_word.result != $signed(lab2_if.cb.instruction_word.op_a % lab2_if.cb.instruction_word.op_b)) begin
+          $error("MOD operation error: Expected result = %0d Actual result = %0d\n", $signed(lab2_if.cb.instruction_word.op_a % lab2_if.cb.instruction_word.op_b), lab2_if.cb.instruction_word.result);
+          error_cnt += 1;
+        end
+      end
+    endcase
+   
   endfunction: print_results
+  
      task run ();
+         if (!$value$plusargs("NR_OF_TRANS=%0d", NR_OF_TRANZ)) begin
+      NR_OF_TRANZ = 100;
+    end
     $display("\n\n***********************************************************");
     $display(    "***  THIS IS NOT A SELF-CHECKING TESTBENCH (YET).  YOU  ***");
     $display(    "***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***");
@@ -54,29 +136,22 @@ class first_test;
 
     $display("\nWriting values to register stack...");
     @(lab2_if.cb) lab2_if.cb.load_en <= 1'b1;  // enable writing to register
-    repeat (10) begin
+    repeat (NR_OF_TRANZ) begin
       @(lab2_if.cb) randomize_transaction;
       @(lab2_if.cb) print_transaction;
+      my_funct_coverage.sample();
     end
     @(lab2_if.cb) lab2_if.cb.load_en <= 1'b0;  // turn-off writing to register
 
     // read back and display same three register locations
     $display("\nReading back the same register locations written...");
-
-     repeat (NR_OF_TRANZ) begin
-      int i;
-       @(lab2_if.cb) lab2_if.cb.read_pointer <= $random(i)%16;
+     for (int i=0; i<=NR_OF_TRANZ-1; i++) begin
+       // later labs will replace this loop with iterating through a
+      // scoreboard to determine which addresses were written and
+      // the expected values to be read back
+       @(lab2_if.cb) lab2_if.cb.read_pointer <= i;
        @(negedge lab2_if.cb) print_results;
      end
-
-
-    // for (int i=2; i>=0; i--) begin
-    //   // later labs will replace this loop with iterating through a
-    //   // scoreboard to determine which addresses were written and
-    //   // the expected values to be read back
-    //   @(lab2_if.cb) lab2_if.cb.read_pointer <= i;
-    //   @(negedge lab2_if.cb) print_results;
-    // end
 
 //TEMA DE CASA in struct instr_t adaugam semnal de result(cat de de mare), 
 //ii facem display in print_results, ne ducem in dut si declaram un case in fct de operatie(din enum),
@@ -88,6 +163,12 @@ class first_test;
     $display(  "***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***");
     $display(  "***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***");
     $display(  "***********************************************************\n");
+   // Error evaluation
+    if (this.error_cnt == 0) begin
+      $display("TEST PASSED");
+    end else if (this.error_cnt > 0) begin
+      $display("TEST FAILED (%0d errors)", this.error_cnt);
+    end
     $finish;
   //end
 endtask
